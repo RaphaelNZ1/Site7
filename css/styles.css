@@ -1,0 +1,88 @@
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #000000;
+    color: #f5f5f7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background-color: #d1d1d6;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Apple style subtle shadows */
+.apple-shadow {
+    box-shadow: 0 4px 14px rgb(0 0 0 / 0.3);
+}
+
+/* Apple style subtle border */
+.apple-border {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Button zoom and white glow effect */
+.btn-effect {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.btn-effect::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.15);
+    filter: blur(8px);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    border-radius: 1rem;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: -1;
+}
+
+.btn-effect:hover, .btn-effect:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+
+.btn-effect:hover::before, .btn-effect:focus::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.form-input {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #f5f5f7;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #d1d1d6;
+}
+
+.submit-button {
+    background-color: #000;
+    border: 1px solid #333;
+    color: #f5f5f7;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #333;
+}
+
